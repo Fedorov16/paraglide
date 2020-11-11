@@ -37,12 +37,12 @@ services:
     networks:
       - paraglide
     volumes:
-      - adp_pg_data:/var/lib/postgresql/data
+      - paraglide:/var/lib/postgresql/data
 
 networks:
   paraglide:
     driver: bridge
 
 volumes:
-  adp_pg_data:
+  paraglide:
     external: true
