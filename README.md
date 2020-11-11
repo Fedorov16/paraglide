@@ -11,3 +11,7 @@ make build
 ### down project
 
 ```make down```
+
+#### Come in to php container
+
+```make in```
