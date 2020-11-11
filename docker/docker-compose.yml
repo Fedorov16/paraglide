@@ -4,10 +4,10 @@ services:
   nginx:
     container_name: parag_nginx
     image: nginx:latest
+    restart: always
     ports:
       - "8080:80"
     volumes:
-      - ./../:/var/www/html
       - ./nginx.conf:/etc/conf.d/default.conf
     environment:
       - VIRTUAL_HOST=paraglide
@@ -16,7 +16,8 @@ services:
 
   php:
     container_name: parag_php
-    build: .
+    build: ./
+    restart: always
     volumes:
       - ./../:/var/www/html
     networks:
@@ -26,15 +27,22 @@ services:
   postgres:
     container_name: parag_postgres
     image: postgres:11
+    restart: always
     ports:
       - "5432:5432"
     environment:
       - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=postgres
     networks:
       - paraglide
+    volumes:
+      - adp_pg_data:/var/lib/postgresql/data
 
 networks:
   paraglide:
     driver: bridge
+
+volumes:
+  adp_pg_data:
+    external: true
