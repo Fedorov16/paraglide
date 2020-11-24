@@ -3,6 +3,10 @@
 ### Install project
 ```
 make build
+
+make in
+
+composer upgrade
 ```
 ### Up project
 
