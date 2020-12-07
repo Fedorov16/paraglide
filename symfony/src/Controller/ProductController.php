@@ -7,18 +7,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/paraglide", name="paraglide")
+ * @Route("/product", name="product")
  */
 
-class MainController extends AbstractController
+class ProductController extends AbstractController
 {
     /**
-     * @Route("/auth", name="auth")
+     * @Route("/all", name="all")
      */
     public function index(): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
+        return $this->render('product/product.html.twig', [
+            'controller_name' => 'productController',
         ]);
     }
 }
