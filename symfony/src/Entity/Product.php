@@ -41,7 +41,12 @@ class Product
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $category;
+    private ?Category $category;
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 
     public function getId(): ?int
     {
@@ -79,7 +84,7 @@ class Product
     /**
      * @return mixed
      */
-    public function getDesc()
+    public function getDescription()
     {
         return $this->description;
     }
@@ -87,7 +92,7 @@ class Product
     /**
      * @param mixed $description
      */
-    public function setDesc($description): void
+    public function setDescription($description): void
     {
         $this->description = $description;
     }
