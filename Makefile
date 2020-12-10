@@ -2,6 +2,7 @@ up: _up
 build: _build
 down: _down
 in: _in
+yarn: _yarn
 watch: _watch
 prod: _prod
 
@@ -16,6 +17,9 @@ _down:
 
 _in:
 	docker exec -it parag_php bash
+
+_yarn:
+	cd symfony && yarn install && cd ..
 
 _watch:
 	cd symfony && yarn encore dev --watch

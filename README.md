@@ -8,11 +8,11 @@ make in
 
 composer install
 
-cd symfony
+php bin/console d:m:m
 
-yarn install
+control+D
 
-cd ..
+make yarn
 
 ```
 ### Up project
