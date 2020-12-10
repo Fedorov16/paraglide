@@ -1,0 +1,27 @@
+easy_admin:
+    site_name: Админ
+
+    list:
+        max_results: 30
+
+    design:
+        brand_color: '#1ABC9C'
+        menu:
+            - { route: 'productall', label: 'На главную', icon: 'home' }
+            - { entity: 'Product', label: ' Товары', icon: 'product' }
+            - { entity: 'Category', label: 'Категории', icon: 'category' }
+            - { entity: 'User', label: 'Пользователи', icon: 'user' }
+        assets:
+                js:
+
+    entities:
+        Category:
+            class: App\Entity\Category
+
+        User:
+            class: App\Entity\User
+            list:
+                fields: ['id', 'first_name', 'second_name', 'phone', 'email']
+
+        Product:
+            class: App\Entity\Product

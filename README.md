@@ -6,9 +6,13 @@ make build
 
 make in
 
-composer upgrade
+composer install
+
+cd symfony
 
 yarn install
+
+cd ..
 
 ```
 ### Up project
